@@ -1,4 +1,4 @@
-//Blackjack en C
+//Blackjack en C - Jose Ivan Chavez
 #include<stdio.h>
 #include<time.h>
 #include<stdlib.h>
@@ -9,6 +9,7 @@ int main(){
 	srand(time(NULL));
 	printf("DESEA JUGAR BLACKJACK?........1 -> SI, cualquier otro numero para salir\n");
 		scanf("%d",&opcion);
+
 	cartacrupier1=0;
 	cartacrupier2=0;
 	cartacrupier3=0;
@@ -42,11 +43,11 @@ suma=0;
 												cartacrupier3=2+(rand()%11);
 												sumacrupier=cartacrupier1+cartacrupier2+cartacrupier3;
 												printf("La suma del crupier es:...[%d]\n",sumacrupier);
-													if(suma>sumacrupier){
+													if(suma>sumacrupier&&suma<=21){
 															printf("Has Ganado!!!");
 													}
-													else if(sumacrupier>suma){
-														printf("Has Perdido :'v' ");
+													else if(sumacrupier>suma&&sumacrupier<=21){
+														printf("Has Perdido :'v ");
 													}
 													if(suma==21){
 														printf("Hiciste un blackjack,Has Ganado!!");
@@ -59,13 +60,17 @@ suma=0;
 										case 1:
 												printf("Tu suma es...[%d]\n",suma);
 
+                                                cartacrupier1=2+(rand()%11);
+												cartacrupier2=2+(rand()%11);
+
+												sumacrupier=cartacrupier1+cartacrupier2;
 
 												printf("La suma del crupier es ...[%d]\n",sumacrupier);
-															if(suma>sumacrupier){
+															if(suma>sumacrupier&&suma<=21){
 															printf("Has Ganado!!!");
 													}
-													else if(sumacrupier>suma){
-														printf("Has Perdido :'v' ");
+													else if(sumacrupier>suma&&sumacrupier<=21){
+														printf("Has Perdido :'v ");
 
 													}
 													break;
@@ -75,10 +80,10 @@ suma=0;
 											}
 
 									if(suma==21){
-									printf("Hiciste un BlackJack Ganaste!!!");	}
+									printf("\nHiciste un BlackJack Ganaste!!!");	}
 
 								if(suma>21){
-									printf("Perdiste");	}
+									printf("\nPerdiste");	}
 
 
 							}
@@ -88,3 +93,4 @@ suma=0;
 
 	return 0;
 }
+
